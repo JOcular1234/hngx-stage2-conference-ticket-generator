@@ -114,6 +114,12 @@ body{
     background-image: linear-gradient(to bottom, #07373F, #061c20);
     margin-top: 40px;
 }
+.image-upload{
+    border: 1px solid #197686;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #24A0B5;
+}
 @media (max-width:767px) {
 .ticket-quality{
     margin-top: 160px;

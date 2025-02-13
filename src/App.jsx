@@ -45,6 +45,14 @@ const App = () => {
     setStep(3);
   };
 
+  const handleReset = () => {
+    localStorage.clear(); // Clear all stored data
+    setStep(1);
+    setTicketType("");
+    setQuantity(1);
+    setAttendee({ fullName: "", email: "", avatar: "", notes: "" });
+  };
+  
   return (
     <div className=" bg-black ">
       <Navbar />

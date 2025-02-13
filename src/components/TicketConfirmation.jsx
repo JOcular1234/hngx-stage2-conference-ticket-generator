@@ -6,7 +6,7 @@ import { MapPin } from "lucide-react";
 
 import "../styles/ticket.css"; // Ensure this file exists or remove this import
 
-const TicketConfirmation = ({onBack, ticketType, quantity, attendee }) => {
+const TicketConfirmation = ({ onBack, ticketType, quantity, attendee }) => {
   const barcodeRef = useRef(null);
   const ticketRef = useRef(null); // Reference for capturing ticket
   const [isDownloading, setIsDownloading] = useState(false); // Loading state
@@ -32,7 +32,6 @@ const TicketConfirmation = ({onBack, ticketType, quantity, attendee }) => {
         scale: 2,
         useCORS: true, // Fix CORS issues
         backgroundColor: "#ffffff", // Ensures a solid background
-        // ignoreElements: (element) => element.tagName.toLowerCase() === "svg", // Exclude SVG (barcode)
         ignoreElements: (element) => {
             return element.tagName.toLowerCase() === "svg" || 
                    (element.style && element.style.color && element.style.color.includes('oklch'));
@@ -50,13 +49,19 @@ const TicketConfirmation = ({onBack, ticketType, quantity, attendee }) => {
     setIsDownloading(false); // Hide loading state
   };
 
+  
+  const handleReset = () => {
+    localStorage.clear(); // Clear stored data
+    window.location.reload(); // Reload the page to reset to the first page
+  };
+  
+
   return (
     <div className="ticket-confirmation-container max-w-lg mx-auto p-6 shadow-lg rounded-md mt-6 text-center">
       {/* Ticket Content */}
       <div ref={ticketRef} className="p-4  rounded-md"> 
         <p className="text-2xl text-white font-bold">Your Ticket is Booked 🎉</p>
         <p className="text-gray-400">Check your email for a copy or you can <span className="text-white font-bold">download</span></p>
-
         </div>
         <div className="summary-div">
           <div className="summary-div-inner text-center ">
@@ -99,7 +104,6 @@ const TicketConfirmation = ({onBack, ticketType, quantity, attendee }) => {
               <td className="text-sm ">{ticketType}</td>
               <td className="text-sm">{quantity}</td>
             </tr>
-            
           </table>
           <div className="textarea-special">
             <div className="attendee-note text-sm text-start text-gray-200" name="" id="">{attendee.notes}</div>
@@ -115,7 +119,7 @@ const TicketConfirmation = ({onBack, ticketType, quantity, attendee }) => {
       </div>
       {/* ✅ Single Download Button (Removed Duplicate) */}
       <div className="download-section flex justify-between">
-      <button className="book-btn" onClick={onBack}>Book Another Ticket</button>
+      <button className="book-btn" onClick={handleReset}>Book Another Ticket</button>
       <button
         onClick={downloadTicket}
         className="download-btn mt-4 bg-blue-500 text-white px-4 py-2 rounded flex justify-center items-center"
