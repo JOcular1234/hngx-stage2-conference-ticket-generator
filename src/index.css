@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Road+Rage&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jeju+Myeongjo&display=swap');
+
 
 @import "tailwindcss";
 
@@ -12,6 +14,14 @@ body{
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+}
+.ticket1{
+    color: #FFF;
+font-family: JejuMyeongjo;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
 .navigation-div-btn{
     margin-top: 30px;
@@ -94,10 +104,9 @@ body{
     border: none;
 }
 .main-container{
-    /* background-color: #0E464F; */
-    /* background-color: #07373F; */
-    background-color: #061c20;
+    background-color: #041e23;
     padding: 30px;
+    border: 1px solid #0E464F;
     margin: 0 auto;
     margin-top: 20px;
 }
@@ -115,10 +124,12 @@ body{
     margin-top: 40px;
 }
 .image-upload{
-    border: 1px solid #197686;
-    padding: 15px;
+    border: 4px solid rgba(36, 160, 181, 0.50);
+    padding: 10px;
     border-radius: 10px;
-    background-color: #24A0B5;
+    background-color: #0E464F;
+    align-self: stretch;
+
 }
 @media (max-width:767px) {
 .ticket-quality{
@@ -145,22 +156,165 @@ gap: 20px;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 }
 
+/*  */
+.name-email-component{
+    display: flex;
+/* align-items: center; */
+gap: 8px;
+align-self: stretch;
+border-bottom: 1px solid #12464E;
+}
+.person-name{
+    color: #FFF;
+font-family: Roboto;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%;
+opacity: 0.33;
+}
+.person-email{
+    color: #FFF;
+font-family: Roboto;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 15px */
+opacity: 0.33;
+}
+.fullname{
+    color: #FFF;
+font-family: Roboto;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+text-align: start;
+line-height: 150%; 
+}
+.main-email-div{
+    border: 1px solid #12464E;
+    text-align: start;
+}
+.main-quality-div{
+    border: 1px solid #12464E;
+    text-align: start;
+    width: 160px;
+}
+.full-email{
+    color: #FFF;
+font-family: Roboto;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 18px */
+}
+
+.images-div{
+    width: 140px;
+height: 140px;
+border-radius: 12px;
+border: 4px solid rgba(36, 160, 181, 0.50);
+background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+.attendees-note-div{
+    display: flex;
+padding: 8px;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 4px;
+align-self: stretch;
+border: 1px solid #0E464F;
+color: #FFF;
+}
+.special{
+    color: #FFF;
+font-family: Roboto;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 15px */
+opacity: 0.33;
+}
+.attendee-notes{
+    color: #FFF;
+font-family: Roboto;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 15px */
+}
+.hero{
+    display: flex;
+/* width: 175px; */
+flex-direction: column;
+align-items: center;
+color: #FFF;
+margin-top: -90px;
+}
+.main-person-div{
+    border: 1px solid #12464E ;
+    text-align: start;
+    width: 100px;
+}
+.main-vip-div{
+    border: 1px solid #12464E;
+    text-align: start;
+    width: 100px;
+}
+.image-avarter{
+    display: flex;
+    width: 232px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.details-component-container{
+    display: flex;
+padding: 4px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+align-self: stretch;
+border-radius: 8px;
+border: 1px solid #133D44;
+background: #08343C;
+}
 /* ATTENDEE FORM */
+.all-details-image-container{
+    display: inline-flex;
+height: 446px;
+padding: 14px;
+align-items: center;
+flex-shrink: 0;
+border-radius: 16px;
+border: 1px solid #24A0B5;
+background: rgba(3, 30, 33, 0.10);
+backdrop-filter: blur(2px);
+flex-direction: column;
+}
+
 .main-attendee-container{
     padding: 10px;
-    background-color: #08272c;
+    background-color: #08252b;
+    border: 1px solid #0E464F;
+
+
 }
 .attendee-container{
     margin: 0 auto;
-    background-color: #061c20;
+    background-color: #08252b;
     padding: 30px;
     color: hsl(0, 0%, 80%);
 }
+.ringss{
+    background-color: black;
+}
 .image-upload-div{
-    padding: 15px;
     background-color: #000;
 }
 .image-upload-input{
@@ -178,6 +332,7 @@ gap: 20px;
 }
 .attendee-label{
     margin: 10px 0;
+    align-self: stretch;
 }
 .return-back-btn{
     color: #24A0B5;
@@ -237,20 +392,20 @@ gap: 20px;
     padding: 20px;
     color: #fff;
     margin-top: 30px;
+    
 }
 .summary-div{
     background-image: url(../public/Subtract.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100vh;
+    
     margin: 0 auto;
     border-radius: 30px;
-    position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 300px;
+    height: 600px;
+    
 }
 .confirmaiton-location{
     margin-top: 90px;
@@ -265,35 +420,7 @@ gap: 20px;
     font-size: 10px;
     text-align: start;
 }
-table{
-    margin: 0 auto;
-    width: 50%;
-    text-align: start;
-    height: 150px;
-    background-color: hsl(189, 68%, 10%);
-}
-table th {
-    border: 1px solid #197686;
-    text-align: start;
-    font-size: 9px;
-    color: #b2b0b0;
-    padding: 4px;
 
-}
-table td{
-    border: 1px solid #197686;
-    padding: 4px;
-
-}
-.text-email{
-    font-size: 10px;
-}
-.text-name{
-    font-size: 10px;
-    font-weight: 500;
-    text-transform: uppercase;
-
-}
 .textarea-special .attendee-note{
     border: 1px solid #197686;
     max-width: 50%;
@@ -304,9 +431,7 @@ table td{
     background-color: #061c20;
 
 }
-.bar-code-container{
-    /* margin-top: 30px; */
-}
+
 .book-btn{
     border: 1px solid #0E464F;
     width: 200px;
@@ -348,9 +473,4 @@ table td{
     .download-btn{
         width: 100%;
     }
-}
-@media (max-width:400px) {
-    /* .confirmaiton-location{
-        border: 1px solid;
-    } */
 }

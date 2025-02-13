@@ -22,7 +22,7 @@ const TicketSelection = ({ onNext }) => {
 
   return (
     <div className=" main-container max-w-lg mx-auto p-6 shadow-md rounded">
-      <h1 className="text-2xl font-bold text-white">Ticket Selection</h1>
+      <h1 className="ticket1 text-2xl font-bold text-white">Ticket Selection</h1>
       <div className="span-ticket w-28 h-1 bg-amber-200"></div>
       <div className="span-ticket2 w-28 h-1 bg-amber-200"></div>
       <div className="main-ticket-section ">

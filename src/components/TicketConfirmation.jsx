@@ -4,7 +4,7 @@ import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import { MapPin } from "lucide-react";
 
-import "../styles/ticket.css"; // Ensure this file exists or remove this import
+import "../styles/ticket.css";
 
 const TicketConfirmation = ({ onBack, ticketType, quantity, attendee }) => {
   const barcodeRef = useRef(null);
@@ -12,7 +12,7 @@ const TicketConfirmation = ({ onBack, ticketType, quantity, attendee }) => {
   const [isDownloading, setIsDownloading] = useState(false); // Loading state
 
   useEffect(() => {
-    // Generate barcode using the attendee's email
+    
     if (barcodeRef.current && attendee.email) {
       JsBarcode(barcodeRef.current, attendee.email, {
         format: "CODE128",
@@ -23,9 +23,8 @@ const TicketConfirmation = ({ onBack, ticketType, quantity, attendee }) => {
     }
   }, [attendee.email]);
 
-  // 📥 Function to Download Ticket as PDF
   const downloadTicket = async () => {
-    setIsDownloading(true); // Show loading state
+    setIsDownloading(true);
 
     try {
       const canvas = await html2canvas(ticketRef.current, {
@@ -51,22 +50,23 @@ const TicketConfirmation = ({ onBack, ticketType, quantity, attendee }) => {
 
   
   const handleReset = () => {
-    localStorage.clear(); // Clear stored data
-    window.location.reload(); // Reload the page to reset to the first page
+    localStorage.clear(); 
+    window.location.reload(); 
   };
   
 
   return (
-    <div className="ticket-confirmation-container max-w-lg mx-auto p-6 shadow-lg rounded-md mt-6 text-center">
+    <div className="ticket-confirmation-container max-w-lg mx-auto p-6 shadow-lg rounded-md mt-6 text-center ">
       {/* Ticket Content */}
       <div ref={ticketRef} className="p-4  rounded-md"> 
         <p className="text-2xl text-white font-bold">Your Ticket is Booked 🎉</p>
         <p className="text-gray-400">Check your email for a copy or you can <span className="text-white font-bold">download</span></p>
         </div>
-        <div className="summary-div">
+        <div className="summary-div r ">
           <div className="summary-div-inner text-center ">
+            <div className="all-details-image-container ">
         {/* Event Details */}
-        <div className="">
+        <div className="hero ">
           <p className="confirmaiton-location text-2xl font-semibold">TechemberFest "25</p>
           <div className="">
           <p className="text-gray-300 text-sm flex justify-center "><span className="location-icon"><MapPin className=" text-red-500" /></span> 4, Ikoyi Lagos, Nigeria</p>
@@ -76,39 +76,68 @@ const TicketConfirmation = ({ onBack, ticketType, quantity, attendee }) => {
 
         {/* Avatar Display */}
         {attendee.avatar && (
-          <div className="mt-4 flex justify-center mx-auto">
+          <div className="image-avarter mt-4 flex justify-center mx-auto ">
             <img
               src={attendee.avatar}
               alt="Attendee Avatar"
-              className="w-24 h-24 rounded-sm mx-auto border"
+              className="images-div w-24 h-24 rounded-sm mx-auto border "
               crossOrigin="anonymous" // Fix CORS issues
             />
           </div>
         )}
 
-<div className="details-container">
-          <table>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-            </tr>
-            <tr>
-              <td className="text-name">{attendee.fullName || "N/A"}</td>
-              <td className="text-email">{attendee.email  || "N/A"}</td>
-            </tr>
-            <tr>
-              <th>Ticket Type</th>
-              <th>Ticket for:</th>
-            </tr>
-            <tr>
-              <td className="text-sm ">{ticketType}</td>
-              <td className="text-sm">{quantity}</td>
-            </tr>
-          </table>
-          <div className="textarea-special">
-            <div className="attendee-note text-sm text-start text-gray-200" name="" id="">{attendee.notes}</div>
+        <div className="details-component-container ">
+          <div className="name-email-component  ">
+            <div className="main-person-div">
+            <div className="person-name ">
+                <p>Name</p>
+            </div>
+            <div className="fullname ">
+                  <p >{attendee.fullName || "N/A"}</p>
+                </div>
+              </div>
+
+                <div className="main-email-div">
+            <div className="person-email">
+              <p>Email:</p>
+            </div>
+            <div className="full-email">
+            <p>{attendee.email  || "N/A"}</p>
+            </div>
+            </div>
+            
           </div>
+
+          <div className="name-email-component ">
+            <div className="main-vip-div ">
+            <div className="person-name ">
+                <p>Ticket Type:</p>
+            </div>
+            <div className="fullname">
+                  <p >{ticketType}</p>
+                </div>
+                </div>
+                <div className="main-quality-div ">
+            <div className="person-email ">
+              <p>Ticket for:</p>
+            </div>
+            <div className="full-email">
+            <p>{quantity}</p>
+            </div>
+            </div>
+            
           </div>
+          <div className=" attendees-note-div">
+            <div className="special ">
+            <p >Special Request?</p>
+            </div>
+            <div className="attendee-notes">
+          {attendee.notes}
+          </div>
+            </div>
+
+        </div>
+        </div>
 
         {/* Barcode Generation */}
         <div className="bar-code-container mt-6 ">

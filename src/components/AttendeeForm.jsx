@@ -56,12 +56,12 @@ const AttendeeForm = ({ onBack, onSubmit }) => {
   return (
     <div className="attendee-container max-w-lg mx-auto p-6 bg-white shadow-md rounded">
       <div className="main-attendee-container">
-        <p className="text-lg font-bold">Attendee Details</p>
+        <p className="ticket1 text-lg font-bold">Attendee Details</p>
         <div className="span-tickets w-38 h-1"></div>
         <div className="span-ticket2 w-28 h-1"></div>
         
         {/* Image Upload Container */}
-        <div className="mt-4 flex justify-center">
+        <div className="ringss mt-4 flex justify-center">
           <label className="w-32 h-32 flex flex-col items-center justify-center border-2 border-dashed border-gray-400 rounded-lg cursor-pointer overflow-hidden">
             {uploadedImage ? (
               <img src={uploadedImage} alt="Preview" className="w-full h-full object-cover ring" />
@@ -119,7 +119,7 @@ const AttendeeForm = ({ onBack, onSubmit }) => {
 
         {/* Notes */}
         <div className="mt-4">
-          <label className="attendee-label block font-normal text-sm">Additional Notes:</label>
+          <label className="attendee-label block font-normal text-sm">Special Requirement?</label>
           <textarea
             className="attendee-name w-full mt-2 p-2 border rounded"
             placeholder="Write your message here..."
