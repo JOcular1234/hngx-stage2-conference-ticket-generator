@@ -59,6 +59,7 @@ const TicketConfirmation = ({ ticketType, quantity, attendee }) => {
 
         </div>
         <div className="summary-div">
+          <div className="summary-div-inner text-center ">
         {/* Event Details */}
         <div className="">
           <p className="confirmaiton-location text-2xl font-semibold">TechemberFest "25</p>
@@ -131,6 +132,7 @@ const TicketConfirmation = ({ ticketType, quantity, attendee }) => {
           <svg className="confirmation-bar-code" ref={barcodeRef}></svg>
           <p className="text-sm text-gray-200 mt-2">Scan this barcode at the event.</p>
         </div>
+      </div>
       </div>
       {/* ✅ Single Download Button (Removed Duplicate) */}
       <div className="download-section flex justify-between">
