@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar";
 import TicketSelection from "./components/TicketSelection";
 import AttendeeForm from "./components/AttendeeForm";
 import TicketConfirmation from "./components/TicketConfirmation";
+import Footer from "./components/Footer";
 
 const App = () => {
-  // Step state: 1 = Ticket Selection, 2 = Attendee Form, 3 = Confirmation
   const [step, setStep] = useState(1);
   const [ticketType, setTicketType] = useState("");
   const [quantity, setQuantity] = useState(1);
@@ -60,6 +60,8 @@ const App = () => {
       {step === 1 && <TicketSelection onNext={handleNextFromTicket} />}
       {step === 2 && <AttendeeForm onBack={() => setStep(1)} onSubmit={handleSubmitAttendee} />}
       {step === 3 && <TicketConfirmation ticketType={ticketType} quantity={quantity} attendee={attendee} />}
+
+      <Footer />
     </div>
   );
 };

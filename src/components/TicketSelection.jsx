@@ -23,7 +23,7 @@ const TicketSelection = ({ onNext }) => {
   return (
     <div className=" main-container max-w-lg mx-auto p-6 shadow-md rounded">
       <h1 className="ticket1 text-2xl font-bold text-white">Ticket Selection</h1>
-      <div className="span-ticket w-28 h-1 bg-amber-200"></div>
+      <div className="span-ticket w-55 h-1 bg-amber-200"></div>
       <div className="span-ticket2 w-28 h-1 bg-amber-200"></div>
       <div className="main-ticket-section ">
         <p className="name-event text-white text-5xl md">TechemberFest '25</p>
@@ -36,7 +36,7 @@ const TicketSelection = ({ onNext }) => {
       </div>
       {/* Ticket Type Selection */}
       <div className="ticket-selections">
-        <label className="ticket-text block font-medium text-white border-green-500">Select Ticket Type:</label>
+        <label className="ticket-text block font-medium text-white border-green-300">Select Ticket Type:</label>
         <div className="mt-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-3 h-20 justify-center items-center ">
           {[{ type: "Free", price: "FREE", access: "REGULAR ACCESS" }, { type: "VIP", price: "$150", access: "VIP ACCESS" }, { type: "VVIP", price: "$250", access: "VVIP ACCESS" }].map(({ type, price, access }) => (
             <div

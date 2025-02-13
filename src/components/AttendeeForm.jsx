@@ -57,7 +57,7 @@ const AttendeeForm = ({ onBack, onSubmit }) => {
     <div className="attendee-container max-w-lg mx-auto p-6 bg-white shadow-md rounded">
       <div className="main-attendee-container">
         <p className="ticket1 text-lg font-bold">Attendee Details</p>
-        <div className="span-tickets w-38 h-1"></div>
+        <div className="span-tickets w-58 h-1"></div>
         <div className="span-ticket2 w-28 h-1"></div>
         
         {/* Image Upload Container */}

@@ -23,30 +23,30 @@ const TicketConfirmation = ({ onBack, ticketType, quantity, attendee }) => {
     }
   }, [attendee.email]);
 
-  const downloadTicket = async () => {
-    setIsDownloading(true);
+  // const downloadTicket = async () => {
+  //   setIsDownloading(true);
 
-    try {
-      const canvas = await html2canvas(ticketRef.current, {
-        scale: 2,
-        useCORS: true, // Fix CORS issues
-        backgroundColor: "#ffffff", // Ensures a solid background
-        ignoreElements: (element) => {
-            return element.tagName.toLowerCase() === "svg" || 
-                   (element.style && element.style.color && element.style.color.includes('oklch'));
-          },
-      });
+  //   try {
+  //     const canvas = await html2canvas(ticketRef.current, {
+  //       scale: 2,
+  //       useCORS: true, // Fix CORS issues
+  //       backgroundColor: "#ffffff", // Ensures a solid background
+  //       ignoreElements: (element) => {
+  //           return element.tagName.toLowerCase() === "svg" || 
+  //                  (element.style && element.style.color && element.style.color.includes('oklch'));
+  //         },
+  //     });
 
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4");
-      pdf.addImage(imgData, "PNG", 10, 10, 190, 0);
-      pdf.save(`TechemberFest_Ticket_${attendee.fullName || "Guest"}.pdf`);
-    } catch (error) {
-      console.error("Error generating PDF:", error);
-    }
+  //     const imgData = canvas.toDataURL("image/png");
+  //     const pdf = new jsPDF("p", "mm", "a4");
+  //     pdf.addImage(imgData, "PNG", 10, 10, 190, 0);
+  //     pdf.save(`TechemberFest_Ticket_${attendee.fullName || "Guest"}.pdf`);
+  //   } catch (error) {
+  //     console.error("Error generating PDF:", error);
+  //   }
 
-    setIsDownloading(false); // Hide loading state
-  };
+  //   setIsDownloading(false); // Hide loading state
+  // };
 
   
   const handleReset = () => {
@@ -146,15 +146,12 @@ const TicketConfirmation = ({ onBack, ticketType, quantity, attendee }) => {
         </div>
       </div>
       </div>
-      {/* ✅ Single Download Button (Removed Duplicate) */}
+
       <div className="download-section flex justify-between">
       <button className="book-btn" onClick={handleReset}>Book Another Ticket</button>
       <button
-        onClick={downloadTicket}
         className="download-btn mt-4 bg-blue-500 text-white px-4 py-2 rounded flex justify-center items-center"
-        disabled={isDownloading}
-      >
-        {isDownloading ? "Generating..." : "Download Ticket"}
+      >Download Ticket
       </button>
       </div>
     </div>
