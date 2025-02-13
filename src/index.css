@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Road+Rage&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+body{
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+.navigation-div-btn{
+    margin-top: 30px;
+}
+.nav-bar{
+    background-color:black;
+    border: 1px solid #197686;
+    border-radius: 10px;
+    padding: 5px;
+}
+.nav-ul{
+    justify-content: center;
+    margin: 0 auto;
+    gap: 30px;
+}
+.tickets-btn{
+    background-color: #fff;
+    color: #061c20;
+    padding: 5px;
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.tickets-btn:hover{
+    background-color: #0E464F;
+    color: #fff;
+    border: 1px solid;
+    transition: all .5s;
+    
+}
+.navigation-div-btn .cancel-div{
+    color: #24A0B5;
+    border-radius: 5px;
+    padding: 3px;
+    width: 200px;
+    cursor: pointer;
+    border-color: #24A0B5;
+}
+.navigation-div-btn .cancel-div:hover{
+    background-color: #24A0B5;
+    color: #fff;
+    transition: all .5s;
+}
+.navigation-div-btn .next-btn{
+    color: #fff;
+    width: 200px;
+    border: none;
+    background-color: #24A0B5;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.navigation-div-btn .next-btn:hover{
+    background-color: #07373F;
+    border: 1px solid;
+    transition: all .5s;
+
+}
+.number-select{
+    color: #fff;
+    background-color: hsl(189, 67%, 23%);
+}
+.span-ticket{
+    background-color: #24A0B5;
+    z-index: 2;
+    position: absolute;
+}
+.span-ticket2{
+    background-color: #0E464F;
+    margin-top: -1px;
+    width: 100%;
+    z-index: 2;
+}
+
+.name-event{
+    font-family: "Road Rage", cursive;
+    text-align: center;
+}
+.access{
+    padding: 10px;
+    border: none;
+}
+.main-container{
+    /* background-color: #0E464F; */
+    /* background-color: #07373F; */
+    background-color: #061c20;
+    padding: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.ticket-quality{
+    margin-top: 30px;
+}
+.ticket-selections{
+    margin-top: 20px;
+}
+.ticket-text{
+    margin-bottom: 10px;
+}
+.main-ticket-section{
+    background-image: linear-gradient(to bottom, #07373F, #061c20);
+    margin-top: 40px;
+}
+@media (max-width:767px) {
+.ticket-quality{
+    margin-top: 160px;
+}
+.navigation-div-btn{
+  flex-direction: column;
+gap: 20px;
+}
+
+.navigation-div-btn .cancel-div{
+    width: 100%;
+}
+.navigation-div-btn .next-btn{
+    width: 100%;
+}
+.nav-ul{
+    display: none;
+}
+}
+
+/* ATTENDEE FORM */
+.main-attendee-container{
+    padding: 10px;
+    background-color: #08272c;
+}
+.attendee-container{
+    margin: 0 auto;
+    background-color: #061c20;
+    padding: 30px;
+    color: hsl(0, 0%, 80%);
+}
+.image-upload-div{
+    padding: 15px;
+    background-color: #000;
+}
+.image-upload-input{
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: #24A0B5;
+}
+.attendee-name{
+    border: 1px solid #07373F;
+    resize: none;
+    outline: none;
+    padding: 3px;
+}
+.attendee-label{
+    margin: 10px 0;
+}
+.return-back-btn{
+    color: #24A0B5;
+    border-radius: 5px;
+    padding: 3px;
+    width: 200px;
+    cursor: pointer;
+    border-color: #24A0B5;
+}
+.return-back-btn:hover{
+    background-color: #24A0B5;
+    color: #fff;
+    transition: all .5s;
+}
+.get-ticket-btn{
+    color: #fff;
+    width: 200px;
+    border: none;
+    background-color: #24A0B5;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.get-ticket-btn:hover{
+    background-color: #07373F;
+    border: 1px solid;
+    transition: all .5s;
+}
+.span-tickets{
+    background-color: #24A0B5;
+    z-index: 2;
+    position: absolute;
+}
+.upload{
+    margin-top: 10px;
+}
+@media (max-width:767px) {
+    .image-upload-div {
+        padding: 5px;
+    }
+    .navigation-attendee-btn{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .return-back-btn {
+        width: 100%;
+    }
+    .get-ticket-btn {
+        width: 100%;
+    }
+}
+
+/* TICKET CONFIRMATION */
+.ticket-confirmation-container{
+    margin: 0 auto;
+    background-color: #0e272b;
+    padding: 20px;
+    color: #fff;
+    margin-top: 30px;
+}
+.summary-div{
+    background-image: url(../public/Subtract.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+    margin: 0 auto;
+    border-radius: 30px;
+}
+.confirmaiton-location{
+    margin-top: 10px;
+    font-family:  "Road Rage", cursive;
+    letter-spacing: 4px;
+}
+.confirmation-bar-code{
+    width: 260px;
+    margin: 0 auto;
+}
+.name-strong1{
+    font-size: 10px;
+    text-align: start;
+}
+table{
+    margin: 0 auto;
+    width: 50%;
+    text-align: start;
+    height: 150px;
+    background-color: hsl(189, 68%, 10%);
+}
+table th {
+    border: 1px solid #197686;
+    text-align: start;
+    font-size: 9px;
+    color: #b2b0b0;
+    padding: 4px;
+
+}
+table td{
+    border: 1px solid #197686;
+    padding: 4px;
+
+}
+.text-email{
+    font-size: 10px;
+}
+.text-name{
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+}
+.textarea-special .attendee-note{
+    border: 1px solid #197686;
+    width: 50%;
+    padding: 9px;
+    resize: none;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #061c20;
+
+}
+.bar-code-container{
+    margin-top: 80px;
+}
+.book-btn{
+    border: 1px solid #0E464F;
+    width: 200px;
+    border-radius: 5px;
+    color: hsl(189, 82%, 38%);
+    cursor: pointer;
+}
+.book-btn:hover{
+    background-color: #24A0B5;
+    color: #fff;
+}
+.download-btn{
+    border: none;
+    width: 200px;
+    background-color: #24A0B5;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.download-btn:hover{
+    background-color: #07373F;
+    border: 1px solid;
+}
+.download-section{
+    margin-top: 20px;
+}
+.location-icon {
+    font-size: 10\0px;
+}
+@media (max-width:767px) {
+    .download-section{
+        display: flex;
+        margin: 20px;
+        flex-direction: column;
+    }
+    .book-btn{
+        width: 100%;
+        margin: 20px 0;
+    }
+    .download-btn{
+        width: 100%;
+    }
+}
