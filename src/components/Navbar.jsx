@@ -5,7 +5,7 @@ export default function Navbar() {
         <nav className="nav-bar text-white py-4 px-6 shadow-md">
           <div className="container mx-auto flex justify-between items-center">
             {/* Logo */}
-            <div><img src="public/Frame1618871078.svg" alt="" /></div>
+            <div className='block md:block'><img src="public/Frame1618871078.svg" alt="" /></div>
     
             {/* Navigation Links */}
             <ul className=" nav-ul flex justify-center text-center space-x-6">

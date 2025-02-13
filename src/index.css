@@ -132,6 +132,14 @@ gap: 20px;
 .nav-ul{
     display: none;
 }
+.summary-div {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
 }
 
 /* ATTENDEE FORM */
@@ -291,7 +299,7 @@ table td{
 
 }
 .bar-code-container{
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 .book-btn{
     border: 1px solid #0E464F;
