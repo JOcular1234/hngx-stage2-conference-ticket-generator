@@ -81,27 +81,6 @@ const TicketConfirmation = ({ ticketType, quantity, attendee }) => {
           </div>
         )}
 
-        {/* Attendee Details
-        <div className="mt-4">
-          <div className="name-email-div flex text-start">
-          <div className="ring">
-          <p><strong className="name-strong1">Name:</strong> <br />{attendee.fullName || "N/A"}</p>
-          </div>
-          <div className="ring">
-          <p><strong className="name-strong1">Email:</strong><br /> {attendee.email || "N/A"}</p>
-          </div>
-          </div>
-
-          <p><strong>Ticket Type:</strong> {ticketType}</p>
-          <p><strong>Number of Tickets:</strong> {quantity}</p>
-        </div>
-
-        {/* Additional Notes */}
-        {/* {attendee.notes && (
-          <div className="mt-4 bg-gray-200 p-3 rounded">
-            <p className="text-gray-600"><strong>Notes:</strong> {attendee.notes}</p>
-          </div>
-        )}  */}
 <div className="details-container">
           <table>
             <tr>

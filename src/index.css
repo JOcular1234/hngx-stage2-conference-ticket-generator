@@ -282,7 +282,7 @@ table td{
 }
 .textarea-special .attendee-note{
     border: 1px solid #197686;
-    width: 50%;
+    max-width: 50%;
     padding: 9px;
     resize: none;
     margin: 0 auto;
@@ -291,7 +291,7 @@ table td{
 
 }
 .bar-code-container{
-    margin-top: 80px;
+    margin-top: 30px;
 }
 .book-btn{
     border: 1px solid #0E464F;
@@ -336,7 +336,7 @@ table td{
     }
 }
 @media (max-width:400px) {
-    .confirmaiton-location{
-        
-    }
+    /* .confirmaiton-location{
+        border: 1px solid;
+    } */
 }
