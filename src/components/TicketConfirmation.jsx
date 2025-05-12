@@ -56,7 +56,7 @@ const TicketConfirmation = ({ onBack, ticketType, quantity, attendee }) => {
   
 
   return (
-    <div className="ticket-confirmation-container max-w-lg mx-auto p-6 shadow-lg rounded-md mt-6 text-center ">
+    <div className="ticket-confirmation-container max-w-lg mx-auto p-6 shadow-lg rounded-md mt-6 text-center ring ring-white ">
       {/* Ticket Content */}
       <div ref={ticketRef} className="p-4  rounded-md"> 
         <p className="text-2xl text-white font-bold">Your Ticket is Booked 🎉</p>
